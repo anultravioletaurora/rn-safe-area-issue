@@ -2,11 +2,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from 'react';
-import {
-  View,
-} from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Index from './screens';
+
+const RootStack = createNativeStackNavigator();
+const TabStack = createBottomTabNavigator();
 
 function App(): React.JSX.Element {
 
@@ -21,7 +21,6 @@ function App(): React.JSX.Element {
 
 function Navigation(): React.JSX.Element {
 
-  const RootStack = createNativeStackNavigator();
 
   return (
     <RootStack.Navigator>
@@ -34,7 +33,6 @@ function Navigation(): React.JSX.Element {
 }
 
 function Tabs(): React.JSX.Element {
-  const TabStack = createBottomTabNavigator();
 
   return (
     <TabStack.Navigator>
