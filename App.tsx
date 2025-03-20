@@ -1,4 +1,4 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from 'react';
@@ -35,7 +35,11 @@ function Navigation(): React.JSX.Element {
 function Tabs(): React.JSX.Element {
 
   return (
-    <TabStack.Navigator>
+    <TabStack.Navigator
+      tabBar={(props) => (
+        <BottomTabBar { ...props } />
+      )}
+    >
       <TabStack.Screen
         name="Index"
         component={Index}
